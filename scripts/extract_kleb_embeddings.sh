@@ -8,8 +8,10 @@
 # _processed.tif, writes <root>/embeddings/cls_cache.pt. Detached via nohup with a
 # timestamped log. Run on a GPU machine.
 #
-# DATA: 2 plates, 96 wells each (192 total), SINGLE magnification _02 = 4x
-# (pxToUm 1.744), 25 frames (uniform). nFrames is inferred (25); 0 wells skipped.
+# DATA: 6 plates (one K. pneumoniae mutant each: NV_058/059/064/065/066/070),
+# 96 wells each (576 total), SINGLE magnification _02 = 4x (pxToUm 1.744), 25 frames
+# (uniform). nFrames is inferred (25); 0 wells skipped. (The script is generic over
+# the output root — no plate/well counts are hardcoded.)
 # Single mag, so one cache at <root>/embeddings/ — no --mag / per-mag split needed.
 # model/imageSize/grid default to dinov2-base / 518 / grid 3.
 #
@@ -21,7 +23,7 @@
 #   processing box : /mnt/phenotyper/Sehna/...
 #   GPU box        : /mnt/bridgeslab/phenotyper/Sehna/...
 #
-# Run AFTER run_kleb_062926.sh finishes (both plates mirrored).
+# Run AFTER run_kleb_062926.sh finishes (all 6 plates mirrored).
 #
 # Usage:
 #   conda activate <env>
